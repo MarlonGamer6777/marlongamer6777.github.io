@@ -82,7 +82,7 @@ img:hover {
 .box {
     display: inline-block;
     border: 2px solid #00ff00;
-    padding: 15px;
+    padding: 8px;
     margin: 15px auto;
     max-width: 600px;
     border-radius: 10px;
