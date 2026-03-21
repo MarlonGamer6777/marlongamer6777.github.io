@@ -1,0 +1,214 @@
+/* BODY normal (untereinander) */
+body {
+    background-color: #000000;
+    color: #00ff00;
+    font-family: monospace;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    /* KEIN flex hier! Damit alles außerhalb von .centerbox untereinander bleibt */
+}
+
+/* Überschriften */
+h1, h2, h3 {
+    color: #00ff00;
+    text-shadow: 0 0 8px #00ff00;
+    margin: 10px 0;
+}
+
+/* Links */
+a {
+    color: black;
+    background-color: #00ff00;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #00cc00;
+    transform: scale(1.1);
+}
+
+/* Buttons */
+button {
+    background-color: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #00ff00;
+    color: black;
+}
+
+/* Inputs & Textareas */
+input, textarea {
+    background-color: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 8px;
+    font-family: inherit;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Paragraphen / Text */
+p {
+    color: #00ff00;
+    line-height: 1.5;
+}
+
+/* Bilder mit Glow */
+img {
+    border-radius: 50%;
+    box-shadow: 0 0 15px #00ff00;
+    transition: 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Boxen / Container */
+.box {
+    display: inline-block;
+    border: 2px solid #00ff00;
+    padding: 15px;
+    margin: 15px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #001100;
+}
+
+/* Terminal-Style Text */
+.terminal {
+    font-family: monospace;
+    color: #00ff00;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    white-space: pre;
+    box-shadow: inset 0 0 5px #00ff00;
+
+    border: 1px solid #00ff00;
+    max-width: 600px;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Code Boxen */
+.code-box {
+    position: relative;
+    background: #000;
+    border: 1px solid #00ff00;
+    padding: 15px;
+    max-height: 200px;
+    max-width: 500px;
+    overflow: auto;
+    box-shadow: 0 0 10px #00ff00;
+    border-radius: 5px;
+}
+
+/* Copy Button für Code Boxen */
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background-color: #00ff00;
+    color: black;
+}
+
+/* Blinkender Cursor */
+.cursor::after {
+    content: "_";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Scanlines Effekt */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        rgba(0,255,0,0.05) 0px,
+        rgba(0,255,0,0.05) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+}
+
+/* Centerbox horizontal */
+.centerbox {
+    display: flex;
+    flex-direction: row;        /* nebeneinander */
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    color: #555;
+    font-size: 12px;
+    margin-top: 40px;
+}
+
+/* Pre-Tag */
+pre {
+    margin: 0;
+    white-space: pre;
+    font-family: inherit;
+}
+
+/* Invis-Style: nur Text bleibt, schwarz und auswählbar */
+.invis {
+    color: #000000 !important;          /* Schrift schwarz */
+    background: none !important;        /* kein Hintergrund */
+    border: none !important;            /* keine Ränder */
+    box-shadow: none !important;        /* kein Glow */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Bilder, Buttons, Inputs, Links, Textareas unsichtbar */
+.invis img,
+.invis button,
+.invis a,
+.invis input,
+.invis textarea,
+.invis .box,
+.invis .code-box,
+.invis .terminal {
+    display: none !important;
+}
