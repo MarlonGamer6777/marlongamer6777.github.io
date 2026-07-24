@@ -1,49 +1,70 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Minecraft Enchantment Seed Cracker</title>
 
 <style>
+
 body{
+
     margin:0;
     font-family:Arial,Helvetica,sans-serif;
     background:#1b1b1b;
     color:white;
+
 }
 
 header{
+
     background:#2f3136;
     padding:20px;
     text-align:center;
     font-size:30px;
     font-weight:bold;
     border-bottom:3px solid #00aa55;
+
 }
 
 .container{
+
     width:1100px;
     max-width:95%;
     margin:auto;
     margin-top:20px;
+
 }
 
 .card{
+
     background:#2b2b2b;
     padding:20px;
     border-radius:12px;
     margin-bottom:20px;
     box-shadow:0 0 10px rgba(0,0,0,.4);
+
 }
 
 h2{
+
     margin-top:0;
     color:#55ff55;
+
+}
+
+label{
+
+    display:block;
+    margin-bottom:5px;
+
 }
 
 input,select{
+
     width:100%;
     box-sizing:border-box;
     padding:10px;
@@ -54,55 +75,67 @@ input,select{
     background:#3a3a3a;
     color:white;
     font-size:15px;
+
 }
 
 button{
+
     background:#00aa55;
     color:white;
     border:none;
     padding:12px 20px;
-    margin-right:10px;
+    margin:12px;
     border-radius:8px;
     cursor:pointer;
     font-size:16px;
+
 }
 
 button:hover{
+
     background:#00cc66;
+
 }
 
 table{
+
     width:100%;
     border-collapse:collapse;
+
 }
 
 th,td{
+
     border:1px solid #555;
     padding:10px;
     text-align:center;
+
 }
 
 th{
+
     background:#444;
+
 }
 
 .result{
+
     min-height:120px;
     background:#1d1d1d;
     border-radius:10px;
     padding:15px;
     overflow:auto;
-}
 
-p {
-    padding:0px;
 }
 
 .footer{
+
     text-align:center;
     opacity:.7;
     margin:30px;
+
 }
+
 </style>
 
 </head>
@@ -110,182 +143,182 @@ p {
 <body>
 
 <header>
-Minecraft Enchantment Seed Cracker
-</header>
 
+Minecraft Enchantment Seed Cracker
+
+</header>
 
 <div class="container">
 
-
 <div class="card">
 
-<h2>Neue Beobachtung</h2>
+<h2>New Observation</h2>
 
-<label>Item</label>
+<label>Category</label>
 
-<select id="item">
+<select id="category">
 
-<option>Buch</option>
-<option>Schwert</option>
-<option>Spitzhacke</option>
-<option>Axt</option>
-<option>Bogen</option>
-<option>Armbrust</option>
-<option>Helm</option>
-<option>Brustplatte</option>
-<option>Hose</option>
-<option>Stiefel</option>
-<option>Angel</option>
-<option>Dreizack</option>
-<option>Never gonna give you up!</option>
+<option value="Book">Book</option>
+
+<option value="Sword">Sword</option>
+<option value="Pickaxe">Pickaxe</option>
+<option value="Axe">Axe</option>
+<option value="Shovel">Shovel</option>
+<option value="Hoe">Hoe</option>
+
+<option value="Helmet">Helmet</option>
+<option value="Chestplate">Chestplate</option>
+<option value="Leggings">Leggings</option>
+<option value="Boots">Boots</option>
+
+<option value="Bow">Bow</option>
+<option value="Crossbow">Crossbow</option>
+<option value="Fishing Rod">Fishing Rod</option>
+<option value="Trident">Trident</option>
+<option value="Mace">Mace</option>
 
 </select>
 
+<label>Material</label>
 
-<label>Bücherregale</label>
+<select id="material">
 
-<input 
+<option value="None">None</option>
+
+<option value="Wooden">Wooden</option>
+<option value="Stone">Stone</option>
+<option value="Iron">Iron</option>
+<option value="Golden">Golden</option>
+<option value="Diamond">Diamond</option>
+<option value="Netherite">Netherite</option>
+
+<option value="Leather">Leather</option>
+<option value="Chainmail">Chainmail</option>
+
+</select>
+
+<label>Bookshelves</label>
+
+<input
 id="bookshelves"
 type="number"
 value="15"
 min="0"
 max="15">
 
-
 <label>Slot 1 Level</label>
 
-<input 
+<input
 id="slot1"
 type="number"
 min="1">
 
-
 <label>Slot 2 Level</label>
 
-<input 
+<input
 id="slot2"
 type="number"
 min="1">
 
-
 <label>Slot 3 Level</label>
 
-<input 
+<input
 id="slot3"
 type="number"
 min="1">
 
-
 <button id="addObservation">
-Beobachtung hinzufügen
-</button>
 
+Add Observation
+
+</button>
 
 </div>
 
-
-
 <div class="card">
 
-<h2>Gesammelte Beobachtungen</h2>
-
+<h2>Observations</h2>
 
 <table>
 
 <thead>
 
 <tr>
+
 <th>#</th>
 <th>Item</th>
-<th>Regale</th>
+<th>Bookshelves</th>
 <th>Slot 1</th>
 <th>Slot 2</th>
 <th>Slot 3</th>
+
 </tr>
 
 </thead>
 
-
 <tbody id="observationTable">
-
+``````html
 </tbody>
-
 
 </table>
 
-
 </div>
-
-
 
 <div class="card">
 
-<h2>Seed Analyse</h2>
-
+<h2>Seed Analysis</h2>
 
 <button id="calculateSeed">
-Seed berechnen
-</button>
 
-<p> </p>
+Calculate Seed
+
+</button>
 
 <button id="reset">
-Zurücksetzen
-</button>
 
+Reset
+
+</button>
 
 </div>
 
-
-
-
 <div class="card">
 
-<h2>Ergebnis</h2>
+<h2>Result</h2>
 
 <div id="result" class="result">
 
-Keine Berechnung durchgeführt.
+No calculation performed.
 
 </div>
 
 </div>
-
-
-
 
 <div class="card">
 
-<h2>Nächste Verzauberungen</h2>
+<h2>Next Enchantments</h2>
 
 <div id="predictions" class="result">
 
-Keine Vorhersagen.
+No predictions.
 
 </div>
 
 </div>
-
-
-
 
 <div class="card">
 
-<h2>Optimaler Weg</h2>
+<h2>Optimal Plan</h2>
 
 <div id="planner" class="result">
 
-Kein Plan vorhanden.
+No plan available.
 
 </div>
 
 </div>
 
-
-
 </div>
-
-
 
 <div class="footer">
 
@@ -293,12 +326,11 @@ Minecraft Enchantment Cracker Alpha
 
 </div>
 
-
-<script src="planner.js"></script>
 <script src="rng.js"></script>
 <script src="seedCracker.js"></script>
+<script src="planner.js"></script>
 <script src="app.js"></script>
 
-
 </body>
+
 </html>
