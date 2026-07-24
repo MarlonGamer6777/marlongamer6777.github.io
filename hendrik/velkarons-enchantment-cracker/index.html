@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Minecraft Enchantment Seed Cracker</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#1b1b1b;
+    color:white;
+}
+
+header{
+    background:#2f3136;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    border-bottom:3px solid #00aa55;
+}
+
+.container{
+    width:1100px;
+    max-width:95%;
+    margin:auto;
+    margin-top:20px;
+}
+
+.card{
+    background:#2b2b2b;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 0 10px rgba(0,0,0,.4);
+}
+
+h2{
+    margin-top:0;
+    color:#55ff55;
+}
+
+input,select{
+    width:100%;
+    box-sizing:border-box;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:8px;
+    background:#3a3a3a;
+    color:white;
+    font-size:15px;
+}
+
+button{
+    background:#00aa55;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    margin-right:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#00cc66;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    border:1px solid #555;
+    padding:10px;
+    text-align:center;
+}
+
+th{
+    background:#444;
+}
+
+.result{
+    min-height:120px;
+    background:#1d1d1d;
+    border-radius:10px;
+    padding:15px;
+    overflow:auto;
+}
+
+.footer{
+    text-align:center;
+    opacity:.7;
+    margin:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+Minecraft Enchantment Seed Cracker
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+
+<h2>Neue Beobachtung</h2>
+
+<label>Item</label>
+
+<select id="item">
+
+<option>Buch</option>
+<option>Schwert</option>
+<option>Spitzhacke</option>
+<option>Axt</option>
+<option>Bogen</option>
+<option>Armbrust</option>
+<option>Helm</option>
+<option>Brustplatte</option>
+<option>Hose</option>
+<option>Stiefel</option>
+<option>Angel</option>
+<option>Dreizack</option>
+
+</select>
+
+
+<label>Bücherregale</label>
+
+<input 
+id="bookshelves"
+type="number"
+value="15"
+min="0"
+max="15">
+
+
+<label>Slot 1 Level</label>
+
+<input 
+id="slot1"
+type="number"
+min="1">
+
+
+<label>Slot 2 Level</label>
+
+<input 
+id="slot2"
+type="number"
+min="1">
+
+
+<label>Slot 3 Level</label>
+
+<input 
+id="slot3"
+type="number"
+min="1">
+
+
+<button id="addObservation">
+Beobachtung hinzufügen
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Gesammelte Beobachtungen</h2>
+
+
+<table>
+
+<thead>
+
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Regale</th>
+<th>Slot 1</th>
+<th>Slot 2</th>
+<th>Slot 3</th>
+</tr>
+
+</thead>
+
+
+<tbody id="observationTable">
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Seed Analyse</h2>
+
+
+<button id="calculateSeed">
+Seed berechnen
+</button>
+
+
+<button id="reset">
+Zurücksetzen
+</button>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>Ergebnis</h2>
+
+<div id="result" class="result">
+
+Keine Berechnung durchgeführt.
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>Nächste Verzauberungen</h2>
+
+<div id="predictions" class="result">
+
+Keine Vorhersagen.
+
+</div>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h2>Optimaler Weg</h2>
+
+<div id="planner" class="result">
+
+Kein Plan vorhanden.
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="footer">
+
+Minecraft Enchantment Cracker Alpha
+
+</div>
+
+
+
+<script src="rng.js"></script>
+<script src="seedCracker.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
